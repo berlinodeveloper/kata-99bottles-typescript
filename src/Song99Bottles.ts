@@ -1,13 +1,20 @@
 class Song99Bottles {
   getLyrics(): string[] {
-    return [
-      "99 bottles of beer on the wall, 99 bottles of beer.",
-      "Take one down and pass it around, 98 bottles of beer on the wall.",
-      "98 bottles of beer on the wall, 98 bottles of beer.",
-      "Take one down and pass it around, 97 bottles of beer on the wall.",
-      "97 bottles of beer on the wall, 97 bottles of beer.",
-      "Take one down and pass it around, 96 bottles of beer on the wall.",
-    ];
+    return [...new Array(98)].flatMap((_, i) => {
+      const bottlesNumber = 99 - i;
+      if (bottlesNumber === 2)
+        return [
+          "2 bottles of beer on the wall, 2 bottles of beer.",
+          "Take one down and pass it around, 1 bottle of beer on the wall.",
+        ];
+
+      return [
+        `${bottlesNumber} bottles of beer on the wall, ${bottlesNumber} bottles of beer.`,
+        `Take one down and pass it around, ${
+          bottlesNumber - 1
+        } bottles of beer on the wall.`,
+      ];
+    });
   }
 }
 
