@@ -1,7 +1,7 @@
 class Song99Bottles {
-    handle(): boolean {
-        return true;
-    }
+  printLyrics(): string[] {
+    return [];
+  }
 }
 
 export default Song99Bottles;
