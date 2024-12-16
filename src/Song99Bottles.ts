@@ -1,6 +1,6 @@
 class Song99Bottles {
   getLyrics(): string[] {
-    return [];
+    return ["99 bottles of beer on the wall, 99 bottles of beer."];
   }
 }
 

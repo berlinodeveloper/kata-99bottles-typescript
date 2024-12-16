@@ -4,6 +4,8 @@ const Song99BottlesClass = new Song99Bottles();
 describe("Song99Bottles Test Suite", function (): void {
   it("get lyrics", (): void => {
     let result: string[] = Song99BottlesClass.getLyrics();
-    expect(result).toEqual([]);
+    expect(result).toEqual([
+      "99 bottles of beer on the wall, 99 bottles of beer.",
+    ]);
   });
 });
