@@ -2,17 +2,19 @@ class Song99Bottles {
   getLyrics(): string[] {
     return [...new Array(100)].flatMap((_, i) => {
       const bottlesNumber = 99 - i;
+      const noMoreBottles = bottlesNumber === 0;
+      const isOneBottle = bottlesNumber === 1;
 
       return [
-        `${bottlesNumber === 0 ? "No more" : bottlesNumber} ${
-          bottlesNumber === 1 ? "bottle" : "bottles"
-        } of beer on the wall, ${
-          bottlesNumber === 0 ? "no more" : bottlesNumber
-        } ${bottlesNumber === 1 ? "bottle" : "bottles"} of beer.`,
-        bottlesNumber === 0
+        `${noMoreBottles ? "No more" : bottlesNumber} ${
+          isOneBottle ? "bottle" : "bottles"
+        } of beer on the wall, ${noMoreBottles ? "no more" : bottlesNumber} ${
+          isOneBottle ? "bottle" : "bottles"
+        } of beer.`,
+        noMoreBottles
           ? "Go to the store and buy some more, 99 bottles of beer on the wall."
           : `Take one down and pass it around, ${
-              bottlesNumber === 1 ? "no more" : bottlesNumber - 1
+              isOneBottle ? "no more" : bottlesNumber - 1
             } ${
               bottlesNumber === 2 ? "bottle" : "bottles"
             } of beer on the wall.`,
