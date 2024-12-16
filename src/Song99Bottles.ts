@@ -1,5 +1,5 @@
 class Song99Bottles {
-  printLyrics(): string[] {
+  getLyrics(): string[] {
     return [];
   }
 }
